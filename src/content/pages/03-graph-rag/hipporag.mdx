@@ -38,7 +38,7 @@ HippoRAG draws an explicit analogy between hippocampal memory components and com
 
 | Brain Component | Memory Function | HippoRAG Module |
 |---|---|---|
-| **Neocortex** | Stores long-term memories, processes sensory input | LLM (extracts entities via Open Information Extraction) |
+| **Neocortex** | Stores long-term memories, processes sensory input | LLM (extracts entity triples via OpenIE-style prompting) |
 | **Parahippocampal Regions** | Filters input, detects synonymy, bridges to hippocampus | Retrieval encoders (embedding similarity for synonym detection) |
 | **Hippocampus** | Creates memory indices, enables context-dependent retrieval | Knowledge Graph + Personalized PageRank |
 

@@ -42,7 +42,7 @@ These two pieces of text are clearly about the same topic. A human would immedia
 
 ### Two Clusters in Vector Space
 
-When you embed a large corpus of queries and a large corpus of document passages, they do not intermingle freely. Instead, they tend to form distinct clusters.
+When you embed a large corpus of queries and a large corpus of document passages using a **symmetric embedding model** (trained on general text similarity), they do not intermingle freely. Instead, they tend to form distinct clusters. The severity of this separation varies by model -- modern instruction-tuned embedding models (like `bge-*` and `gte-*` series) reduce but do not eliminate this clustering effect.
 
 ```mermaid
 graph LR
@@ -70,7 +70,7 @@ Cosine similarity measures the angle between two vectors. It works beautifully w
 
 Think of it this way: the sentence "What causes climate change?" is structurally more similar to "What causes inflation?" than it is to a paragraph explaining the greenhouse effect. An embedding model captures both structural patterns and semantic content, and when the structural signal dominates, the wrong documents get retrieved.
 
-This is the symmetry problem: **effective retrieval requires symmetric comparison** (question-to-question or answer-to-answer), but naive RAG performs an asymmetric comparison (question-to-answer).
+This is the symmetry problem: effective retrieval with **symmetric embedding models** requires symmetric comparison (question-to-question or answer-to-answer), but naive RAG performs an asymmetric comparison (question-to-answer) using a model not trained for it.
 
 ### The Three Paths Forward
 

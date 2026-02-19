@@ -137,6 +137,8 @@ These are RAG events and processes that **unfold through time**. You cannot obse
 
 **Why the distinction between Process and Accomplishment?** Processes (like Retrieval) are cumulative — two retrieval operations composed are still retrieval. Accomplishments (like QuerySession) are non-atomic events with a natural endpoint — the session completes when a response is returned.
 
+**Note on Retrieval classification:** Whether a specific retrieval event is a Process or Accomplishment is debatable. The ongoing activity of retrieval is stative (cumulative), but a single retrieval request-response cycle has a natural endpoint, making it arguably an accomplishment. We classify it as Process here to emphasize its cumulative nature across a system's lifetime.
+
 ### Qualities: Measurable Properties
 
 Qualities **inhere in** other entities. They cannot exist independently.
