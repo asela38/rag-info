@@ -48,8 +48,7 @@ flowchart TD
     C --> C1["Chunk<br/>Isolation"]
     C --> C2["Missing<br/>Hierarchies"]
     C1 --> C1a["LightRAG<br/>(deduplication)"]
-    C2 --> C2a["HippoRAG<br/>(memory model)"]
-    C2 --> C2b["PPR<br/>(subgraph discovery)"]
+    C2 --> C2a["HippoRAG + PPR<br/>(memory model +<br/>subgraph discovery)"]
 ```
 </DiagramBlock>
 
@@ -76,10 +75,9 @@ The <CrossReference slug="02-retrieval-strategies/symmetry-problem" /> page expl
 | Technique | Strategy | Key Idea |
 |-----------|----------|----------|
 | <CrossReference slug="03-graph-rag/graphrag" /> | Build a knowledge graph from documents | Entities and relationships become first-class objects |
-| <CrossReference slug="03-graph-rag/ontology" /> | Define formal categories for graph elements | Distinguish things (endurants) from processes (perdurants) |
+| <CrossReference slug="04-rag-ontology/ontology" /> | Define formal categories for graph elements | Distinguish things (endurants) from processes (perdurants) |
 | <CrossReference slug="03-graph-rag/lightrag" /> | Lightweight graph with deduplication | Simpler graph construction, cross-document dedup |
-| <CrossReference slug="03-graph-rag/hipporag" /> | Memory-inspired architecture | Mimics hippocampal indexing for associative retrieval |
-| <CrossReference slug="03-graph-rag/ppr" /> | Personalized PageRank on the graph | Discovers relevant subgraphs from query nodes |
+| <CrossReference slug="03-graph-rag/hipporag" /> | Memory-inspired architecture + PPR | Hippocampal indexing with PageRank-based subgraph discovery |
 
 ## Branch 3: Keyword Blindness
 
@@ -102,8 +100,7 @@ The <CrossReference slug="02-retrieval-strategies/symmetry-problem" /> page expl
 | Technique | Strategy | Key Idea |
 |-----------|----------|----------|
 | <CrossReference slug="03-graph-rag/lightrag" /> | Cross-document entity deduplication | Recognizes the same entity across chunks |
-| <CrossReference slug="03-graph-rag/hipporag" /> | Hippocampal memory model | Pattern separation + completion for context recovery |
-| <CrossReference slug="03-graph-rag/ppr" /> | Graph-based context expansion | Walks the graph to find contextually connected nodes |
+| <CrossReference slug="03-graph-rag/hipporag" /> | Hippocampal memory model + PPR | Pattern separation, completion, and graph-based context expansion |
 
 ## How the Branches Interact
 
@@ -115,14 +112,14 @@ flowchart LR
     H["Hybrid RAG<br/>(Branch 3)"] --> C["Combined<br/>Retriever"]
     HY["HyDE<br/>(Branch 1)"] --> C
     C --> G["GraphRAG<br/>(Branch 2)"]
-    G --> PPR["PPR<br/>(Branch 4)"]
-    PPR --> F["Final<br/>Answer"]
+    G --> HIPPO["HippoRAG + PPR<br/>(Branch 4)"]
+    HIPPO --> F["Final<br/>Answer"]
 ```
 </DiagramBlock>
 
 For example:
 - **HyDE + Hybrid RAG**: Transform the query (Branch 1) then use both sparse and dense retrieval (Branch 3)
-- **GraphRAG + PPR**: Build a knowledge graph (Branch 2) and use PageRank to find relevant subgraphs (Branch 4)
+- **GraphRAG + HippoRAG/PPR**: Build a knowledge graph (Branch 2) and use PageRank to find relevant subgraphs (Branch 4)
 - **LightRAG**: Addresses both structural blindness (Branch 2) and context loss (Branch 4) in a lightweight package
 
 ## Reading Paths

@@ -4,6 +4,7 @@ const SectionEnum = z.enum([
   'foundation',
   'retrieval-strategies',
   'graph-rag',
+  'rag-ontology',
   'synthesis',
 ]);
 

@@ -1,11 +1,11 @@
 ---
 title: "Foundational Ontologies for RAG"
 description: "Comparing DOLCE, BFO, and SUMO as foundations for modeling RAG systems ontologically"
-section: "graph-rag"
-order: 8
-prerequisites: ["03-graph-rag/rag-ontology-map"]
-relatedPages: ["03-graph-rag/ontology", "03-graph-rag/competency-questions"]
-prev: "03-graph-rag/rag-ontology-map"
+section: "rag-ontology"
+order: 4
+prerequisites: ["04-rag-ontology/rag-ontology-map"]
+relatedPages: ["04-rag-ontology/ontology", "04-rag-ontology/competency-questions"]
+prev: "04-rag-ontology/rag-ontology-map"
 next: "04-synthesis/progressive-map"
 tags: ["ontology", "dolce", "bfo", "sumo", "foundational"]
 ---
@@ -19,7 +19,7 @@ import ComparisonTable from '../../../components/ComparisonTable.astro';
 
 ## Why Anchor to a Foundation?
 
-The <CrossReference slug="03-graph-rag/rag-ontology-map" /> maps RAG concepts to DOLCE categories. But DOLCE is not the only foundational ontology. **BFO** and **SUMO** offer different categorization schemes — and the choice affects how you model, reason about, and extend the RAG ontology.
+The <CrossReference slug="04-rag-ontology/rag-ontology-map" /> maps RAG concepts to DOLCE categories. But DOLCE is not the only foundational ontology. **BFO** and **SUMO** offer different categorization schemes — and the choice affects how you model, reason about, and extend the RAG ontology.
 
 A foundational ontology provides:
 - **Shared vocabulary** for cross-domain interoperability
@@ -190,9 +190,9 @@ DOLCE's four-way perdurant distinction is the most expressive here — it captur
 
 The journey through this section:
 
-1. <CrossReference slug="03-graph-rag/ontology" /> introduced endurants and perdurants
-2. <CrossReference slug="03-graph-rag/competency-questions" /> showed how to ask the right questions
-3. <CrossReference slug="03-graph-rag/rag-ontology-map" /> derived the complete RAG ontology from those questions
+1. <CrossReference slug="04-rag-ontology/ontology" /> introduced endurants and perdurants
+2. <CrossReference slug="04-rag-ontology/competency-questions" /> showed how to ask the right questions
+3. <CrossReference slug="04-rag-ontology/rag-ontology-map" /> derived the complete RAG ontology from those questions
 4. This page compared which foundational ontology best anchors that derivation
 
 The ontology is not just an academic exercise — it provides the formal structure that <CrossReference slug="03-graph-rag/graphrag" /> uses when extracting entities and relationships from documents.

@@ -7,7 +7,8 @@ const CONTENT_DIR = join(process.cwd(), 'src/content/pages');
 const EXPECTED_SECTIONS = [
   { dir: '01-foundation', section: 'foundation', minPages: 3 },
   { dir: '02-retrieval-strategies', section: 'retrieval-strategies', minPages: 5 },
-  { dir: '03-graph-rag', section: 'graph-rag', minPages: 8 },
+  { dir: '03-graph-rag', section: 'graph-rag', minPages: 3 },
+  { dir: '04-rag-ontology', section: 'rag-ontology', minPages: 4 },
   { dir: '04-synthesis', section: 'synthesis', minPages: 3 },
 ];
 
@@ -33,7 +34,7 @@ function extractFrontmatter(content: string): Record<string, unknown> {
 }
 
 describe('Navigation Structure', () => {
-  it('all 4 section directories exist', async () => {
+  it('all 5 section directories exist', async () => {
     const missing: string[] = [];
     for (const { dir } of EXPECTED_SECTIONS) {
       try {

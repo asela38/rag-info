@@ -1,12 +1,12 @@
 ---
 title: "Competency Questions for RAG"
 description: "How to systematically design a RAG ontology using the five types of Competency Questions"
-section: "graph-rag"
-order: 6
-prerequisites: ["03-graph-rag/ontology"]
-relatedPages: ["03-graph-rag/graphrag", "03-graph-rag/rag-ontology-map"]
-prev: "03-graph-rag/ppr"
-next: "03-graph-rag/rag-ontology-map"
+section: "rag-ontology"
+order: 2
+prerequisites: ["04-rag-ontology/ontology"]
+relatedPages: ["03-graph-rag/graphrag", "04-rag-ontology/rag-ontology-map"]
+prev: "04-rag-ontology/ontology"
+next: "04-rag-ontology/rag-ontology-map"
 tags: ["ontology", "competency-questions", "methodology", "ontoclean"]
 ---
 
@@ -19,7 +19,7 @@ import ComparisonTable from '../../../components/ComparisonTable.astro';
 
 ## Why Not Just Draw Boxes and Arrows?
 
-The <CrossReference slug="03-graph-rag/ontology" /> page introduced endurants and perdurants — but how do ontologists actually *decide* what goes into an ontology? They don't just brainstorm entities. They use **Competency Questions** (CQs): precise questions that define what the ontology must be able to answer.
+The <CrossReference slug="04-rag-ontology/ontology" /> page introduced endurants and perdurants — but how do ontologists actually *decide* what goes into an ontology? They don't just brainstorm entities. They use **Competency Questions** (CQs): precise questions that define what the ontology must be able to answer.
 
 This is the Gruninger & Fox methodology, and it turns ontology design from art into engineering.
 
@@ -127,9 +127,9 @@ Answer: **Quality** — it inheres in the relationship between a query and a chu
 
 > **FCQ-4**: "Is 'Retriever' a role or an artefact?"
 
-Answer: **Role** — the same software component might play the Retriever role in one pipeline and the Indexer role in another. See the <CrossReference slug="03-graph-rag/ontology" /> discussion of endurants vs perdurants.
+Answer: **Role** — the same software component might play the Retriever role in one pipeline and the Indexer role in another. See the <CrossReference slug="04-rag-ontology/ontology" /> discussion of endurants vs perdurants.
 
-The <CrossReference slug="03-graph-rag/foundational-ontologies" /> page compares how different foundational ontologies handle these categorizations.
+The <CrossReference slug="04-rag-ontology/foundational-ontologies" /> page compares how different foundational ontologies handle these categorizations.
 
 ---
 
@@ -217,4 +217,4 @@ flowchart LR
 
 ## What's Next
 
-Now that we understand the methodology, let's apply it. The <CrossReference slug="03-graph-rag/rag-ontology-map" /> shows the complete RAG ontology derived from these competency questions.
+Now that we understand the methodology, let's apply it. The <CrossReference slug="04-rag-ontology/rag-ontology-map" /> shows the complete RAG ontology derived from these competency questions.

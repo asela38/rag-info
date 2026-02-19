@@ -5,7 +5,7 @@ section: "synthesis"
 order: 1
 prerequisites: ["01-foundation/problem-tree"]
 relatedPages: ["04-synthesis/indexing-comparison", "04-synthesis/decision-guide"]
-prev: "03-graph-rag/foundational-ontologies"
+prev: "04-rag-ontology/foundational-ontologies"
 next: "04-synthesis/indexing-comparison"
 tags: ["overview", "progressive", "map", "synthesis"]
 ---
@@ -91,7 +91,7 @@ flowchart TB
 | Technique | What It Adds | Complexity |
 |-----------|-------------|------------|
 | <CrossReference slug="03-graph-rag/graphrag" /> | Full entity/relationship extraction, community detection | High — LLM calls for extraction |
-| <CrossReference slug="03-graph-rag/ontology" /> | Formal categorization (endurants vs. perdurants) | Conceptual — guides graph design |
+| <CrossReference slug="04-rag-ontology/ontology" /> | Formal categorization (endurants vs. perdurants) | Conceptual — guides graph design |
 | <CrossReference slug="03-graph-rag/lightrag" /> | Lightweight graph + cross-document dedup | Medium — simpler extraction |
 
 ## Layer 5: Intelligent Graph Traversal
@@ -100,8 +100,7 @@ Having a knowledge graph is not enough — you need to traverse it intelligently
 
 | Technique | Traversal Strategy |
 |-----------|-------------------|
-| <CrossReference slug="03-graph-rag/hipporag" /> | Memory-inspired pattern separation and completion |
-| <CrossReference slug="03-graph-rag/ppr" /> | Personalized PageRank to find relevant subgraphs |
+| <CrossReference slug="03-graph-rag/hipporag" /> | Memory-inspired pattern separation and completion via Personalized PageRank |
 
 ## The Complete Stack
 

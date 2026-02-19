@@ -15,19 +15,18 @@ const REQUIRED_PAGES: Record<string, { section: string; order: number; title: st
   '02-retrieval-strategies/asymmetric-embeddings': { section: 'retrieval-strategies', order: 4, title: 'Asymmetric Embeddings' },
   '02-retrieval-strategies/hybrid-rag': { section: 'retrieval-strategies', order: 5, title: 'Hybrid RAG' },
   '03-graph-rag/graphrag': { section: 'graph-rag', order: 1, title: 'GraphRAG' },
-  '03-graph-rag/ontology': { section: 'graph-rag', order: 2, title: 'Ontology: Endurants & Perdurants' },
-  '03-graph-rag/lightrag': { section: 'graph-rag', order: 3, title: 'LightRAG' },
-  '03-graph-rag/hipporag': { section: 'graph-rag', order: 4, title: 'HippoRAG' },
-  '03-graph-rag/ppr': { section: 'graph-rag', order: 5, title: 'Personalized PageRank' },
-  '03-graph-rag/competency-questions': { section: 'graph-rag', order: 6, title: 'Competency Questions for RAG' },
-  '03-graph-rag/rag-ontology-map': { section: 'graph-rag', order: 7, title: 'RAG Ontology Map' },
-  '03-graph-rag/foundational-ontologies': { section: 'graph-rag', order: 8, title: 'Foundational Ontologies for RAG' },
+  '03-graph-rag/lightrag': { section: 'graph-rag', order: 2, title: 'LightRAG' },
+  '03-graph-rag/hipporag': { section: 'graph-rag', order: 3, title: 'HippoRAG & Personalized PageRank' },
+  '04-rag-ontology/ontology': { section: 'rag-ontology', order: 1, title: 'Ontology: Endurants & Perdurants' },
+  '04-rag-ontology/competency-questions': { section: 'rag-ontology', order: 2, title: 'Competency Questions for RAG' },
+  '04-rag-ontology/rag-ontology-map': { section: 'rag-ontology', order: 3, title: 'RAG Ontology Map' },
+  '04-rag-ontology/foundational-ontologies': { section: 'rag-ontology', order: 4, title: 'Foundational Ontologies for RAG' },
   '04-synthesis/progressive-map': { section: 'synthesis', order: 1, title: 'Progressive Build-Up Map' },
   '04-synthesis/indexing-comparison': { section: 'synthesis', order: 2, title: 'Indexing Strategy Comparison' },
   '04-synthesis/decision-guide': { section: 'synthesis', order: 3, title: 'Decision Guide' },
 };
 
-const VALID_SECTIONS = ['foundation', 'retrieval-strategies', 'graph-rag', 'synthesis'];
+const VALID_SECTIONS = ['foundation', 'retrieval-strategies', 'graph-rag', 'rag-ontology', 'synthesis'];
 
 function extractFrontmatter(content: string): Record<string, unknown> {
   const match = content.match(/^---\n([\s\S]*?)\n---/);

@@ -29,5 +29,5 @@ test('navigation sidebar shows all sections', async ({ page }) => {
   await page.goto('/01-foundation/why-rag');
   const sidebar = page.locator('.site-sidebar');
   await expect(sidebar).toBeVisible();
-  await expect(sidebar.locator('.nav-section')).toHaveCount(4);
+  await expect(sidebar.locator('.nav-section')).toHaveCount(5);
 });
