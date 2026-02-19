@@ -46,10 +46,32 @@ Breaking this down:
 
 ## The RAG Insight
 
-Retrieval-Augmented Generation combines two capabilities:
+The name **Retrieval-Augmented Generation** describes exactly what happens, in order. Each word carries architectural weight:
 
-1. **Retrieval** — Find relevant documents from a knowledge base
-2. **Generation** — Use the LLM to synthesize an answer from those documents
+### **R** — Retrieval
+
+The system does not guess. Given a query, it searches a knowledge base and pulls back specific documents (or chunks of documents) that are likely relevant. This is the same core problem that search engines solve, but applied at a different scale: instead of ranking web pages for a human to browse, the retriever selects context for a language model to consume.
+
+Retrieval typically works through **vector similarity**. Documents are converted into high-dimensional vectors (embeddings) that capture their meaning. At query time, the query is embedded into the same space, and the nearest document vectors are returned. This means "relevant" is defined mathematically — cosine distance or dot product between vectors — not by keyword overlap alone.
+
+The retriever is the gatekeeper: **if the right documents are not retrieved, no amount of generation quality can compensate**. This is why most RAG research focuses on improving retrieval.
+
+### **A** — Augmented
+
+This is the architectural insight. The LLM is not retrained or fine-tuned with new knowledge. Instead, its input is **augmented** — the retrieved documents are injected into the prompt alongside the user's query. The model's parameters stay frozen; only its context changes.
+
+This means:
+- **Updating knowledge does not require touching the model.** Re-index new documents and the system knows new things.
+- **The same model serves different knowledge bases.** Swap the index, and an LLM that answered medical questions now answers legal ones.
+- **Augmentation is transparent.** You can inspect exactly what context the model received, making debugging and auditing possible.
+
+### **G** — Generation
+
+The LLM reads the retrieved documents and the original query, then synthesizes a natural-language answer. It is not copying and pasting — it is reasoning over the provided context: resolving conflicts between sources, combining information from multiple passages, and formatting the answer for the user's question.
+
+Generation is where the LLM's strengths shine: language understanding, summarization, inference, and fluency. But critically, the model is now **constrained** by the retrieved context. A well-designed RAG system instructs the model to answer only from the provided documents, reducing (though not eliminating) hallucination.
+
+### How They Compose
 
 <DiagramBlock caption="The RAG pattern: retrieve first, then generate" label="RAG basic flow diagram">
 ```mermaid

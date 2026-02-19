@@ -33,7 +33,7 @@ const currentSlug = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '');
 const allPages = await getCollection('pages');
 const totalPages = allPages.length;
 const allSorted = allPages.sort((a, b) => {
-  const sectionOrder = ['foundation', 'retrieval-strategies', 'graph-rag', 'synthesis'];
+  const sectionOrder = ['foundation', 'retrieval-strategies', 'graph-rag', 'rag-ontology', 'synthesis'];
   const sa = sectionOrder.indexOf(a.data.section);
   const sb = sectionOrder.indexOf(b.data.section);
   if (sa !== sb) return sa - sb;
@@ -45,6 +45,7 @@ const sectionLabels: Record<string, string> = {
   'foundation': 'Foundation',
   'retrieval-strategies': 'Retrieval Strategies',
   'graph-rag': 'Graph-Based RAG',
+  'rag-ontology': 'RAG Ontology',
   'synthesis': 'Synthesis',
 };
 
